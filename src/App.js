@@ -8,8 +8,6 @@ import TodayHD from "./components/TodayHD";
 import Favorite1 from "./components/Favorite1";
 import Favorite2 from "./components/Favorite2";
 import Favorite3 from "./components/Favorite3";
-import { ButtonData } from "./components/ButtonData";
-
 function App() {
   const [navButton, setNavButton] = useState(["Today", "Today-HD"]);
   const [APOD, setAPOD] = useState([]);
@@ -86,38 +84,39 @@ function App() {
       return <Favorite3></Favorite3>
     }
   };
-  const ButtonData = [
+  const buttonData = [
     {
       id: 1,
-      onClick: selectToday(),
+      onClick: selectToday,
       name: "Today"
     },
     {
       id: 2,
-      onClick: selectTodayHD(),
+      onClick: selectTodayHD,
       name: "Today-HD"
     },
     {
       id: 3,
-      onClick: selectFavorite1(),
+      onClick: selectFavorite1,
       name: "Favorite - 1"
     },
     {
       id: 4,
-      onClick: selectFavorite2(),
+      onClick: selectFavorite2,
       name: "Favorite - 2"
     },
     {
       id: 5,
-      onClick: selectFavorite3(),
+      onClick: selectFavorite3,
       name: "Favorite - 3"
     }
   ]
 
-  console.log({ ButtonData })
+  console.log({ buttonData })
   return (
     <div className="App">
-      <ButtonBar ButtonData={ButtonData}></ButtonBar>
+      <ButtonBar buttonData={buttonData}></ButtonBar>
+      {/* <Calendar></Calendar> */}
       {displayPage()}
     </div>
   );
