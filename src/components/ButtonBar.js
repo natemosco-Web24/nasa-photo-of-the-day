@@ -5,7 +5,7 @@ import styled from "styled-components"
 const StyledButtonBar = styled.div`
     width = 100%;
     height= 200px;
-    background-color= gray;
+    background-color: #00000073;
     display:flex;
     justify-content: flex-start;
     align-items:center;
