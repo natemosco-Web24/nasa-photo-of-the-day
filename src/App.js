@@ -21,10 +21,10 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`https://api.nasa.gov/planetary/apod`)
+      .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-01-01`)
       .then(response => {
         console.log(response)
-        // setAPOD(response)
+        setAPOD(response.data)
       })
       .catch(error => {
         console.log("axios response failed", error)
@@ -69,10 +69,10 @@ function App() {
   };
   const displayPage = () => {
     if (today) {
-      return <Today></Today>
+      return <Today APOD={APOD}></Today>
     }
     else if (todayHD) {
-      return <TodayHD></TodayHD>
+      return <TodayHD APOD={APOD}></TodayHD>
     }
     else if (favorite1) {
       return <Favorite1></Favorite1>
@@ -112,7 +112,6 @@ function App() {
     }
   ]
 
-  console.log({ buttonData })
   return (
     <div className="App">
       <ButtonBar buttonData={buttonData}></ButtonBar>
