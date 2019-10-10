@@ -5,8 +5,8 @@ const StyledButton = styled.button`
     color: white;
     border-radius: 45px;
     height: 40px;
-    width: 140px;
-    margin: 5px 5px;
+    width: 150px;
+    margin: 5px 10px;
     font-size: 1.8rem;
     font-weight: 900;
     background: linear-gradient(#eae4e4, #040434);
